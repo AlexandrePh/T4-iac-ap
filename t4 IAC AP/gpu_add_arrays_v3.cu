@@ -12,7 +12,7 @@ void add(int n, float *d_x, float *d_y)
 {
 
   int index = blockIdx.x * blockDim.x + threadIdx.x;
-  int threds_in_dim = gridDim.x * blockDim.x;
+  int threads_in_dim = gridDim.x * blockDim.x;
   if (index > threads_in_dim ){
     return;
   }
