@@ -3,17 +3,24 @@
 #include <cuda_runtime.h>
 #include "exec_time.h"
 
-#define DATASET_SIZE 1024
+#define DATASET_SIZE 1000000
 #define THREADS_PER_BLOCK 256
 
 // Kernel function to add the elements of two arrays
 __global__
 void add(int n, float *d_x, float *d_y)
 {
+
   int index = blockIdx.x * blockDim.x + threadIdx.x;
-  if (index < n) {
-    d_y[index] = d_x[index] + d_y[index];
+  int threds_in_dim = gridDim.x * blockDim.x;
+  if (index > threads_in_dim ){
+    return;
   }
+  while (index < n){
+    d_y[index] = d_x[index] + d_y[index];
+    index += threads_in_dim;
+  }
+
 
 }
 
