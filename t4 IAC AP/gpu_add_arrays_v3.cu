@@ -17,8 +17,7 @@ void add(int n, float *d_x, float *d_y)
 
 }
 
-int main_func(int argc, char **argv)
-
+int main_func(int argc, char **argv){
 
 
 

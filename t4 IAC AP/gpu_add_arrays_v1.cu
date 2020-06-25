@@ -14,10 +14,10 @@ void add(int n, float *d_x, float *d_y)
   if (index < n) {
     d_y[index] = d_x[index] + d_y[index];
   }
-    
+
 }
 
-int main_func(int argc, char **argv)
+int main_func(int argc, char **argv){
 
 
 
