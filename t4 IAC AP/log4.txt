@@ -1,0 +1,17 @@
+Allocating arrays h_x and h_y on host...0.015000 ms
+Allocating array d_x and d_y on device...1949.041992 ms
+Initializing array h_x and h_y on host...10.531000 ms
+Copying arrays from host to device...1.274000 ms
+Running kernel on elemnts of d_x and d_y...0.035000 ms
+Copying array from device (d_y) to host (h_y)...Copying arrays from host to device...1.190000 ms
+Running kernel on elemnts of d_x and d_y...0.005000 ms
+Copying array from device (d_y) to host (h_y)...Copying arrays from host to device...1.210000 ms
+Running kernel on elemnts of d_x and d_y...0.004000 ms
+Copying array from device (d_y) to host (h_y)...Copying arrays from host to device...1.130000 ms
+Running kernel on elemnts of d_x and d_y...0.005000 ms
+Copying array from device (d_y) to host (h_y)...1.031000 ms
+1.036000 ms
+Checking for processing errors...19.707001 ms
+Max error: 0.000000
+Freeing memory...0.495000 ms
+Overall time: 1988.881958 ms
