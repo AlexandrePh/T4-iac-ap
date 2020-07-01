@@ -130,8 +130,8 @@ int main_func(int argc, char **argv)
         if (dimensions*dimensions > 512){
             threadsPerBlock.x = 512;
             threadsPerBlock.y = 512;
-            blocksPerGrid.x = ceil(double(N)/double(threadsPerBlock.x));
-            blocksPerGrid.y = ceil(double(N)/double(threadsPerBlock.y));
+            blocksPerGrid.x = ceil(double(dimensions)/double(threadsPerBlock.x));
+            blocksPerGrid.y = ceil(double(dimensions)/double(threadsPerBlock.y));
   }
 
   multiplication<<<blocksPerGrid,threadsPerBlock>>>(d_x,d_y,d_result,dimensions);
