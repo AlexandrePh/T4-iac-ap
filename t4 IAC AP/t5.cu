@@ -125,15 +125,15 @@ int main_func(int argc, char **argv)
   printf("Running kernel on elemnts of d_x and d_y...");
   gettimeofday(&start, NULL);
 
-  dim3 threadsPerBlock(N, N);
+  dim3 threadsPerBlock(dimensions, dimensions);
   dim3 blocksPerGrid(1, 1);
-        if (N*N > 512){
+        if (dimensions*dimensions > 512){
             threadsPerBlock.x = 512;
             threadsPerBlock.y = 512;
             blocksPerGrid.x = ceil(double(N)/double(threadsPerBlock.x));
             blocksPerGrid.y = ceil(double(N)/double(threadsPerBlock.y));
   }
-  
+
   multiplication<<<blocksPerGrid,threadsPerBlock>>>(d_x,d_y,d_result,dimensions);
 
 
