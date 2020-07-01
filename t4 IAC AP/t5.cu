@@ -22,7 +22,7 @@ __global__
 
 int main_func(int argc, char **argv)
 {
-  int dimensions = 1000000
+  int dimensions = 1000000;
   float *h_x, *h_y,*h_result;
   float *d_x, *d_y,*d_result;
 
@@ -152,14 +152,7 @@ int main_func(int argc, char **argv)
   printf("%f ms\n", timedifference_msec(start, stop));
 
   // Check for errors (all values should be 3.0f)
-  printf("Checking for processing errors...");
-  gettimeofday(&start, NULL);
-
-
-
-  gettimeofday(&stop, NULL);
-  printf("%f ms\n", timedifference_msec(start, stop));
-  printf("Max error: %f\n", maxError);
+  
 
   // Free memory
   printf("Freeing memory...");
