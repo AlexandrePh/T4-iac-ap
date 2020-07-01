@@ -13,9 +13,9 @@ __global__
    if (ROW < N && COL < N) {
      float tmp_sum = 0.0f;
      for (int i = 0; i < N; i++) {
-           tmpSum += A[ROW * N + i] * B[i * N + COL];
+           tmp_sum += A[ROW * N + i] * B[i * N + COL];
        }
-       C[ROW * N + COL] = tmpSum;
+       C[ROW * N + COL] = tmp_sum;
      }
 }
 // Kernel function to add the elements of two arrays
