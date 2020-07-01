@@ -124,10 +124,17 @@ int main_func(int argc, char **argv)
   // Run kernel on elements on the GPU
   printf("Running kernel on elemnts of d_x and d_y...");
   gettimeofday(&start, NULL);
-  int blockSize = blockDim.x;
-  int numBlocks = (dimensions + blockSize - 1) / blockSize;
-  // add<<<numBlocks, blockSize>>>(DATASET_SIZE, d_x, d_y);
-  multiplication<<<numBlocks,blockSize>>>(d_x,d_y,d_result,dimensions);
+
+  dim3 threadsPerBlock(N, N);
+  dim3 blocksPerGrid(1, 1);
+        if (N*N > 512){
+            threadsPerBlock.x = 512;
+            threadsPerBlock.y = 512;
+            blocksPerGrid.x = ceil(double(N)/double(threadsPerBlock.x));
+            blocksPerGrid.y = ceil(double(N)/double(threadsPerBlock.y));
+  }
+  
+  multiplication<<<blocksPerGrid,threadsPerBlock>>>(d_x,d_y,d_result,dimensions);
 
 
   // Wait for GPU to finish before accessing on host
