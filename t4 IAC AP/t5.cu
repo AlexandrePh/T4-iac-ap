@@ -127,7 +127,7 @@ int main_func(int argc, char **argv)
   int blockSize = blockDim.x;
   int numBlocks = (dimensions + blockSize - 1) / blockSize;
   // add<<<numBlocks, blockSize>>>(DATASET_SIZE, d_x, d_y);
-  multiplication<<<numBlocks,blockSize>>>(d_x,d_y,d_result,dimensions)
+  multiplication<<<numBlocks,blockSize>>>(d_x,d_y,d_result,dimensions);
 
 
   // Wait for GPU to finish before accessing on host
@@ -152,7 +152,7 @@ int main_func(int argc, char **argv)
   printf("%f ms\n", timedifference_msec(start, stop));
 
   // Check for errors (all values should be 3.0f)
-  
+
 
   // Free memory
   printf("Freeing memory...");
