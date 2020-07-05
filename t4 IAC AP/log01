@@ -1,0 +1,9 @@
+128
+Allocating arrays h_x and h_y on host...0.033000 ms
+Allocating array d_x and d_y and d_result on device...1952.787964 ms
+Initializing array h_x and h_y on host...0.115000 ms
+Copying arrays from host to device...0.079000 ms
+Running kernel on elemnts of d_x and d_y...0.020000 ms
+Copying array from device (d_y) to host (h_y)...0.032000 ms
+Freeing memory...0.010000 ms
+Overall time: 1953.490967 ms

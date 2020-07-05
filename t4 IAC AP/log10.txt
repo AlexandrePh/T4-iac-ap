@@ -1,0 +1,2 @@
+50000
+Allocating arrays h_x and h_y on host...Error: malloc unable to allocate memory on host.Overall time: 0.407000 ms
